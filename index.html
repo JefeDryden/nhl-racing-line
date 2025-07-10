@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Line Chart Race Animation</title>
+    <title>NHL Player Points Line Chart</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -63,9 +63,13 @@
             color: #333;
         }
         
-        .line {
+        .player-line {
             fill: none;
-            stroke-width: 3;
+            stroke-width: 2;
+        }
+        
+        .player-line:hover {
+            stroke-width: 4;
         }
         
         .dot {
@@ -76,6 +80,10 @@
         .label {
             font-size: 12px;
             font-weight: bold;
+        }
+        
+        .leader-line {
+            stroke-dasharray: 2,2;
         }
         
         .axis {
@@ -90,7 +98,7 @@
 </head>
 <body>
     <div id="chart-container">
-        <h1 style="text-align: center;">Line Chart Race Animation</h1>
+        <h1 style="text-align: center;">NHL Player Points Line Chart</h1>
         
         <div class="controls">
             <button id="play-button">Play</button>
@@ -101,6 +109,14 @@
                 <label for="speed-slider">Speed:</label>
                 <input type="range" id="speed-slider" min="1" max="10" value="5">
                 <span id="speed-value">5</span>
+            </div>
+            
+            <div class="speed-control">
+                <label for="view-toggle">View:</label>
+                <select id="view-toggle">
+                    <option value="daily">Daily</option>
+                    <option value="weekly">Weekly</option>
+                </select>
             </div>
         </div>
         
